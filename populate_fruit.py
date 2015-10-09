@@ -5,7 +5,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mydeb_3.settings')
 import django
 django.setup()
 
-from fruit.model import *
+from fruit.models import *
 
 def add_person(name):
 	c = Person.objects.get_or_create(name = name)[0]

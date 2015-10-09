@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.shortcuts import render
-from django.models import *
+from fruit.models import *
 from django.http import HttpResponse
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
@@ -45,7 +45,7 @@ def goods_submit(request):
 		price = request.POST['qprice']
 
 		goodsid = Goods.objects.get(name = goods)
-		person = person.objects.get(id = userid)
+		person = Person.objects.get(id = userid)
 		goods = Goods.objects.get(id = goodsid.id)
 		Indent.objects.create(person = person, goods = goods, count = int(count), price = int(price))
 	

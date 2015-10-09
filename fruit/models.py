@@ -7,7 +7,7 @@ from datetime import datetime
 
 class Person(models.Model):
 	"""docstring for Person"""
-	name = models.CharField(max_length = 16, vernose_name = u"店员姓名")
+	name = models.CharField(max_length = 16, verbose_name = u"店员姓名")
 
 	def __unicode__(self):
 		return self.name
@@ -15,7 +15,7 @@ class Person(models.Model):
 #物品类型
 
 class Case(models.Model):
-	name = models.CharField(max_length = 16, vernose_name = u"物品类型")
+	name = models.CharField(max_length = 16, verbose_name = u"物品类型")
 
 	def __unicode__(self):
 		return self.name
@@ -24,8 +24,8 @@ class Case(models.Model):
 
 class Goods(models.Model):
 	case = models.ForeignKey(Case)
-	name = models.CharField(max_length = 16, vernose_name = u"物品名称")
-	price = models.IntegerField(default = 0, vernose_name = u"物品单价")
+	name = models.CharField(max_length = 16, verbose_name = u"物品名称")
+	price = models.IntegerField(default = 0, verbose_name = u"物品单价")
 
 	def __unicode__(self):
 		return self.name
@@ -35,8 +35,8 @@ class Goods(models.Model):
 class Indent(models.Model):
 	person = models.ForeignKey(Person)
 	goods = models.ForeignKey(Goods)
-	count = models.IntegerField(default = 1, vernose_name = u"物品数量")
-	price = models.IntegerField(default = 0, vernose_name = u"物品总价")
+	count = models.IntegerField(default = 1, verbose_name = u"物品数量")
+	price = models.IntegerField(default = 0, verbose_name = u"物品总价")
 	time = models.DateTimeField(default = datetime.now)
 
 	def __unicode__(self):
