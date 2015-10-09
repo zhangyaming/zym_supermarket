@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>欢迎光临 大张量贩</title>
+</head>
+<body>
+<h1>欢迎光临 大张量贩</h1>
+<h2>今日收银员</h2>
+{% if context %}
+<ul>
+	{% for people in context %}
+	<li>
+		<a href="/fruit/people/{{people.id}}/indent">{{people.name}}</a>
+
+	</li>
+	{{% endfor %}}
+
+</ul>
+{% endif %}
+</body>
+</html>
